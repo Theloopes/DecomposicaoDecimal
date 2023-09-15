@@ -1,18 +1,17 @@
-﻿Console.WriteLine(" --- Decomposição Decimal ---");
+﻿int unidade, centena, dezena;
+
+Console.WriteLine(" --- Decomposição Decimal ---");
 Console.WriteLine("");
 Console.Write("Digite um número inteiro...: ");
 int numero = Convert.ToInt32(Console.ReadLine()!);
 
-int resto = numero;
+unidade = (numero % 100) % 10;
+dezena = (numero % 100) / 10;
+centena = numero / 100;
 
-int unidade = resto % 10;
-resto /= 10;
-int dezena = resto % 10;
-resto /= 10;
-int centena = resto % 10;
-
+Console.Clear();
 Console.WriteLine($"O número {numero} possui: ");
-Console.WriteLine($" {unidade} unidade(s)");
-Console.WriteLine($" {dezena} dezena(s)");
-Console.WriteLine($" {centena} centena(s)");
+Console.WriteLine($" {unidade,5} unidade(s)");
+Console.WriteLine($" {dezena,5} dezena(s)");
+Console.WriteLine($" {centena,5} centena(s)");
 
